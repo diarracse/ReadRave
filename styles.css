@@ -1,0 +1,600 @@
+/*header*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: white;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /*fluidité dans la transition*/
+    transition: background-color 0.3s, color 0.3s;
+    /*définir l'ordre de superposition et evite le chauvachement */
+    z-index: 1000;
+}
+
+header .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    max-width: 50px;
+    transition: transform 0.2s ease-in-out;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: gray;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header .search {
+    margin-left: auto;
+}
+
+header .search input {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    transition: transform 0.2s ease-in-out;
+}
+
+header .search button {
+    padding: 5px 10px;
+    background-color: gray;
+    color: #fff;
+    border: none;
+    /*css avancé*/
+    border-radius: 3px;
+    /*changement souris lors du hover*/
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+header nav ul li a:hover {
+    /*couleur en rose lors du hover et ombre*/
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: palevioletred;
+}
+
+.search input:hover,
+.logo img:hover {
+    /*zoom lors du hover*/
+    transform: scale(1.02);
+}
+
+.search button:hover {
+    /*deplacement vers le haut lors du hover*/
+    transform: translateY(-1px);
+}
+
+.logo img:hover {
+    /*changement du logo lors du survol*/
+    content: url('images/ReadRave.gif');
+}
+
+.background-image {
+    background-image: url('images/banniere.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    margin-top: 5em;
+}
+
+/*FOOTER*/
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+footer h3 {
+    color: #fff;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer hr {
+    border-color: #666;
+}
+
+footer.text-center {
+    text-align: center;
+}
+
+/*séléction*/
+.selection {
+    background-color: #e8d0ed;
+    margin-top: 10em;
+    padding-top: 10px;
+}
+
+.selection h4 {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 1.5em;
+}
+
+.selection h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 2em;
+    margin-top: 5px;
+}
+
+.selection #h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 5em 1em;
+}
+
+/*carrousel*/
+.imgBoutons {
+    display: flex;
+    flex-direction: column;
+    /* Les éléments sont alignés en colonne */
+    align-items: center;
+    position: relative;
+}
+
+.imgCarrousel {
+    margin-bottom: 20px;
+    /* Espacement entre l'image et les boutons */
+}
+
+.imgCarrousel img {
+    width: 300px;
+    /* Taille fixe pour toutes les images */
+    height: auto;
+    /* Permet de conserver les proportions */
+}
+
+.carrouselBoutons {
+    display: flex;
+}
+
+.carrouselBoutons button {
+    background-color: transparent;
+    /* Fond transparent */
+    border: none;
+    font-size: 1.5em;
+    /*changement souris lors du hover*/
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: transform 0.2s;
+}
+
+.carrouselBoutons button:hover {
+    /*deplacement lors du hover vers le haut*/
+    transform: translateY(-2px);
+}
+
+.carrouselBoutons button:active {
+    transform: translateY(2px);
+}
+
+#precedent {
+    margin-right: 10px;
+    /* Espacement entre les boutons */
+}
+
+#a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 5em 5em;
+}
+
+#submit {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 15px;
+    background-color: rgb(122, 122, 122);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    position: relative;
+    /*changement souris lors du hover*/
+    cursor: pointer;
+    transition-duration: 3s;
+}
+
+.arrow {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit:hover {
+    background-color: rgb(62, 62, 62);
+    transition-duration: .2s;
+}
+
+#submit:hover .arrow {
+    /*décaler la flèche lors du hover*/
+    animation: slide-right .6s ease-out both;
+}
+
+/* arrow animation */
+/*css avancé*/
+@keyframes slide-right {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/*livres disponibles*/
+.disponibles {
+    justify-content: center;
+    margin: 10em 20em;
+    padding: 5px;
+    border: 3px solid gray;
+}
+
+.disponibles h3 {
+    background-color: gray;
+    margin: -5px;
+    padding-left: 5px;
+    animation-name: fondu;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.disponibles h3 {
+    height: 30px;
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    animation-name: fondu;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/*css avancé*/
+/*dégradé de couleur*/
+@keyframes fondu {
+    0% {
+        background-color: gray;
+    }
+
+    25% {
+        background-color: palevioletred;
+    }
+
+    50% {
+        background-color: rgb(224, 148, 174);
+    }
+
+    100% {
+        background-color: gray;
+    }
+}
+
+
+/*page bibliothèque*/
+/*bouton Imprimer en JS*/
+.boutonImprimer {
+    display: flex;
+    justify-content: right;
+    margin-top: 6em;
+}
+
+.boutonImprimer button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    /*changement souris lors du hover*/
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: transform 0.2s;
+    color: palevioletred;
+    font-weight: bold;
+}
+
+.boutonImprimer button:hover {
+    color: #433633;
+}
+
+#title {
+    font-size: 2em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+    position: relative;
+}
+
+.bibliotheque {
+    /*grid pour les images*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+
+.book {
+    position: relative;
+}
+
+.book img {
+    width: 90%;
+    height: 450px;
+}
+
+.titre {
+    /*couleur, position du texte lors du hover des images*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 84.3%;
+    height: 430px;
+    background-color: rgba(0, 0, 0, 0.777);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 15px;
+    /*changement souris lors du hover*/
+    cursor: pointer;
+}
+
+.book:hover .titre {
+    /*images plus sombre lors du hover*/
+    opacity: 1;
+}
+
+.etoiles {
+    font-size: 24px;
+    color: gold;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/*bouton retour en haut*/
+#haut {
+    display: flex;
+    justify-content: center;
+    margin: 5em;
+}
+
+#haut button {
+    font-size: 3em;
+    background-color: transparent;
+    color: palevioletred;
+    border: none;
+    /*changement souris lors du hover*/
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/*page connexion*/
+.connexion {
+    max-width: 400px;
+    margin: 10em auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    /*css avancé*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.connexion h2 {
+    margin-bottom: 20px;
+}
+
+.connexion form {
+    margin-top: 20px;
+}
+
+.connexion label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.connexion input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    /*css avancé*/
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.connexion input[type="submit"] {
+    width: 100%;
+    background-color: #cb457b;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.connexion input[type="submit"]:hover {
+    background-color: palevioletred;
+}
+
+/*page profil*/
+.profil {
+    max-width: 700px;
+    margin: 10em auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profil form {
+    margin-top: 20px;
+}
+
+.profil label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.profil input {
+    width: calc(100% - 22px);
+    /* Largeur du champ de texte moins les bordures */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    /*css avancé*/
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.profil button {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    /*css avancé*/
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #c08fb4;
+}
+
+.profil form {
+    margin-top: 20px;
+}
+
+.profil button:hover {
+    background-color: #9e545c;
+    /*changement de la souris lors du hover*/
+    cursor: pointer;
+}
+
+/* Mode dark page profil*/
+/*emplacement bouton nuit*/
+.container2 {
+    margin-top: 5em;
+    display: flex;
+    justify-content: right;
+}
+
+.container2 button {
+    background-color: transparent;
+    /* Fond transparent */
+    border: none;
+    font-size: 3em;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: transform 0.2s;
+}
+
+/*thème foncé*/
+.dark-theme .profil {
+    background-color: #8F857D;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .profil input {
+    border: 1px solid gray;
+}
+
+.dark-theme .profil button {
+    color: black;
+    background-color: #DECBB7;
+}
+
+.dark-theme .profil button:hover {
+    background-color: #5C5552;
+}
+
+.dark-theme {
+    background-color: #5C5552;
+    /* Fond sombre */
+    color: black;
+    /* Texte blanc */
+}
+
+.dark-theme header {
+    background-color: #5C5552;
+}
+
+.dark-theme header nav ul li a {
+    color: #DECBB7;
+}
+
+.dark-theme header .search input {
+    border: 1px solid #DECBB7;
+}
+
+.dark-theme header .search button {
+    background-color: #DECBB7;
+    color: black;
+}
+
+.dark-theme nav ul li a:hover {
+    color: #DECBB7;
+}
+
+.dark-theme footer {
+    background-color: #433633;
+    color: #DECBB7;
+}
+
+.dark-theme footer h3 {
+    color: #8F857D;
+}
+
+.dark-theme footer ul li a {
+    color: #DECBB7;
+}
+
+.dark-theme footer hr {
+    border-color: #8F857D;
+}
